@@ -111,6 +111,7 @@ class MyLoginPage extends State<LoginPage> {
           ],
         ),
       ),
-    ));
+    )
+    );
   }
 }
