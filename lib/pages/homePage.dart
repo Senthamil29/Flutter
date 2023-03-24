@@ -45,19 +45,47 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: (CatalogModels.items != null && CatalogModels.items!.isNotEmpty)
-            ? ListView.builder(
-                itemCount: CatalogModels.items!.length,
-                itemBuilder: (context, index) {
-                  return ItemWidget(
-                    item: CatalogModels.items![index],
-                  );
-                })
-            : Center(
-                child: CircularProgressIndicator(),
-              ),
-      ),
+          padding: const EdgeInsets.all(16.0),
+          child:
+              (CatalogModels.items != null && CatalogModels.items!.isNotEmpty)
+                  ? GridView.builder(
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 2),
+                      itemBuilder: (context, index) {
+                        final item = CatalogModels.items![index];
+
+                        return Card(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(16)),
+                          child: GridTile(
+                            header: Container(
+                              height: 20,
+                              decoration: BoxDecoration(
+                                  color: Colors.deepPurple[300],
+                                  borderRadius: BorderRadius.circular(5)),
+                              child: Text(
+                                item.name,
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black),
+                              ),
+                            ),
+                            child: Image.network(item.image),
+                            footer: Text(
+                              "\$${item.price}",
+                              style: TextStyle(
+                                  color: Colors.deepPurple,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 13),
+                            ),
+                          ),
+                        );
+                      },
+                      itemCount: CatalogModels.items!.length,
+                    )
+                  : Center(
+                      child: CircularProgressIndicator(),
+                    )),
       drawer: MyDrawer(),
     );
   }
