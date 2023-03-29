@@ -6,6 +6,7 @@ import 'package:learn_flutter_30days/utilis/routes.dart';
 import 'package:learn_flutter_30days/widgets/container.dart';
 import 'package:learn_flutter_30days/widgets/floating_navbar.dart';
 import 'package:learn_flutter_30days/widgets/rich_text.dart';
+import 'package:learn_flutter_30days/widgets/stack.dart';
 import 'package:learn_flutter_30days/widgets/theme.dart';
 
 void main() {
@@ -26,12 +27,13 @@ class MyApp extends StatelessWidget {
       ),
       //initialRoute: MyRoute.homeRoute,
       routes: {
-        "/": (context) => FloatNavBar(),
+        "/": (context) => MyStack(),
         MyRoute.homeRoute: (context) => HomePage(),
         MyRoute.loginRoute: (context) => LoginPage(),
         MyRoute.richTextRoute: (context) => MyRichText(),
         MyRoute.containerRoute: (context) => MyContainer(),
         MyRoute.floatNavRoute: (context) => FloatNavBar(),
+        MyRoute.stackRoute: (context) => MyStack(),
       },
     );
   }
