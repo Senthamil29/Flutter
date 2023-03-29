@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:learn_flutter_30days/pages/homePage.dart';
 import 'package:learn_flutter_30days/pages/loginPage.dart';
 import 'package:learn_flutter_30days/utilis/routes.dart';
+import 'package:learn_flutter_30days/widgets/container.dart';
 import 'package:learn_flutter_30days/widgets/rich_text.dart';
 import 'package:learn_flutter_30days/widgets/theme.dart';
 
@@ -24,10 +25,11 @@ class MyApp extends StatelessWidget {
       ),
       //initialRoute: MyRoute.homeRoute,
       routes: {
-        "/": (context) => MyRichText(),
+        "/": (context) => MyContainer(),
         MyRoute.homeRoute: (context) => HomePage(),
         MyRoute.loginRoute: (context) => LoginPage(),
         MyRoute.richTextRoute: (context) => MyRichText(),
+        MyRoute.containerRoute: (context) => MyContainer(),
       },
     );
   }
