@@ -5,4 +5,5 @@ class MyRoute {
   static String loginRoute = "/login";
   static String richTextRoute = "/richtext";
   static String containerRoute = "/container";
+  static String floatNavRoute = "/floatnavbar";
 }
